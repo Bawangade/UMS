@@ -1,0 +1,88 @@
+<div class="card-w-50  align-center" style="width: 70rem">
+    <div class="card-body ">
+        <div class="container-fluid">
+            <form [formGroup]="registrationForm" (ngSubmit)="RegisterTs()">
+                <div class="row">
+                    <h1>Register</h1>
+                    <hr>
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+                            <label class="form-label">First Name</label>
+                            <input type="text" class="form-control" name="fname" formControlName="fname"
+                                placeholder="Enter First Name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Country</label>
+                            <select name="countryId" class="form-control" (change)=" stateTs($any($event.target).value)"
+                            formControlName="countryId" placeholder="select Country" id="">    
+                            <option value="default" *ngFor="let a of country|keyvalue" [value]="a.key">
+                                {{a.value}}</option>
+                            </select>
+
+                        </div>
+                       
+                        <div class="form-group">
+                            <label class="form-label">Date Of Birth</label>
+                            <input type="date" class="form-control" name="dob" formControlName="dob"
+                                placeholder="select birth date">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Mobile Number</label>
+                            <input type="t" class="form-control" name="phno" formControlName="phno"
+                                placeholder="Enter Mobile no.">
+                        </div>
+                        <div class="m-1">Gender</div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="gender" class="form-check-input" value="Male" id="">
+                            <label class="form-check-label" for="">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="gender" class="form-check-input" value="Female" id="">
+                            <label class="form-check-label" for="">Female</label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" class="form-control" name="lname" formControlName="lname"
+                                placeholder="Last Name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">State</label>
+                            <select id="" class="form-select" class="form-control" name="stateId" formControlName="stateId"
+                              (change)="cityTs($any($event.target).value)"  placeholder="Select State">
+                                <option  *ngFor="let s of state|keyvalue" [value]="s.key">{{s.value}}</option>
+                        </select  >
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">City</label>
+                            <select  id= ""  class="form-control" name="cityId" formControlName="cityId"
+                             placeholder="select city">
+                            <option *ngFor="let c of city|keyvalue" [value]="c.key">{{c.value}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control"(blur)=" emailTs($any($event.target).value )" name="email" formControlName="email"
+                             #email   placeholder="Enter Email">
+                        </div>
+
+                    </div><br>
+
+
+                </div><br>
+
+                <button class="form-control bg-primary text-center" (click)="RegisterTs()" style="width: 45rem">Register</button><br>
+                <button class="form-control bg-danger text-center" (click)="Reset(registrationForm)" style="width: 45rem"> Reset</button>
+
+            </form>
+
+        </div>
+    </div>
+ </div>

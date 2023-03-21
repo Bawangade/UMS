@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-6">
+            <br>
+            <h1>Forgot Password</h1>
+            <hr>
+            <form [formGroup]="ForgotList">
+                <div class="form-group">
+            
+                    <label for="" class="form-label">Enter your  Email Id</label>
+                    <input type="email" formControlName="emailId" name="emailId" #email class="form-control" id="">
+                </div><br>
+               <button type="submit"  class="btn btn-danger" (click)="ForgotTs()">Submit</button>
+            
+            </form>
+            
+        </div>
+        <br>
+
+  </div>
+
+</div>
