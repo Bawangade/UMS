@@ -8,15 +8,16 @@ import { MainServiceService } from '../main-service.service';
   styleUrls: ['./forget.component.css']
 })
 export class ForgetComponent {
-  constructor(private HttpForget:MainServiceService){this.ForgotTs()}
+  constructor(private HttpForget:MainServiceService){}
 
 
   ForgotList=new FormGroup({
     emailId : new FormControl('')
   })
-  emailId:any
+  email:any
   ForgotTs(){
-    this.HttpForget.Forgot(this.ForgotList.value.emailId).subscribe(res=>console.log(res))
+    this.HttpForget.Forgot(this.ForgotList.value.emailId).subscribe(res=>alert(res))
   }
+
   
 }

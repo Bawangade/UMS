@@ -15,8 +15,8 @@ export class MainServiceService {
     return this.HttpSer.post(`${this.baseurl}/login`, body, { responseType: 'text' })
   }
   // Forgot get Method
-  Forgot(emailId: any) {
-    return this.HttpSer.get(`${this.baseurl}/forgotPwd/${emailId}`)
+  Forgot(mail: any) {
+    return this.HttpSer.get(`${this.baseurl}/forgotPwd/${mail}`,{responseType:'text'})
   }
   // Registration post Method
   Register(body: any) {
